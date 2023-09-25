@@ -4,8 +4,9 @@ class Prototype < ApplicationRecord
 
   validates :title, :catch_copy, :concept, presence: true, unless: :was_attached?
 
-    def was_attached?
-      self.image.attached?
-    end
-  
+  def was_attached?
+    self.image.attached?
   end
+  
+end
+

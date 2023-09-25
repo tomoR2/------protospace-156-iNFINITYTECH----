@@ -17,6 +17,12 @@ class PrototypesesController < ApplicationController
 
   def create
     # prototype.create(prototype_params) #{ストロングﾊﾟﾗﾒｰﾀｰ作成メソッドの名前が引数}
+    # 保存できた場合とできなかった場合での分岐処理
+    #if @prototype.save
+      #redirect_to room_messages_path(@room)
+      #else
+     #render :index, status: :unprocessable_entity
+    #end
   end
 
   def destroy
