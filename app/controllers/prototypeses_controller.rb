@@ -8,7 +8,7 @@ class PrototypesesController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    # @prototypeses = Prototype.all ←まだプロトタイプテーブル作っていないのでコメントアウト
+    @prototypeses = Prototype.all
   end
 
   def new
@@ -16,7 +16,7 @@ class PrototypesesController < ApplicationController
   end
 
   def create
-    prototype.create(prototype_params) #{ストロングﾊﾟﾗﾒｰﾀｰ作成メソッドの名前が引数}
+    # prototype.create(prototype_params) #{ストロングﾊﾟﾗﾒｰﾀｰ作成メソッドの名前が引数}
   end
 
   def destroy
