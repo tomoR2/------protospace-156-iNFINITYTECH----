@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root to: 'prototypeses#index'
 
   resources :prototypeses
+  resources :users
 
 end

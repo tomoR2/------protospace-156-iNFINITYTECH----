@@ -1,8 +1,8 @@
 class PrototypesesController < ApplicationController
 # <before_actionの二行はピックツイートのコピペ。使えそうなら使います。>
 # <未ログイン者の新規投稿URLアクセス　→　リダイレクトのアクションはprivateで定義>
-  
-  # before_action :set_tweet, only: [:edit, :show] 
+
+  # before_action :set_tweet, only: [:edit, :show]
 
 # <未ログインユーザー indexとshow以外は閲覧制限される>
   before_action :move_to_index, except: [:index, :show]
@@ -16,13 +16,13 @@ class PrototypesesController < ApplicationController
   end
 
   def create
-    # prototype.create(prototype_params) #{ストロングﾊﾟﾗﾒｰﾀｰ作成メソッドの名前が引数}
+    prototype.create(prototype_params) #{ストロングﾊﾟﾗﾒｰﾀｰ作成メソッドの名前が引数}
     # 保存できた場合とできなかった場合での分岐処理
-    #if @prototype.save
-      #redirect_to room_messages_path(@room)
-      #else
-     #render :index, status: :unprocessable_entity
-    #end
+    if @prototypes.save
+      redirect_to room_messages_path(@room)
+      else
+     render :index, status: :unprocessable_entity
+    end
   end
 
   def destroy
