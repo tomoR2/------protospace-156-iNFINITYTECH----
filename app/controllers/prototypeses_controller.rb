@@ -38,7 +38,7 @@ class PrototypesesController < ApplicationController
   end
 
   def show
-    # @user = User.find(params[:id]) ←一回非表示
+    @prototypes = prototypes.find(params[:id])
   end
 
   private
